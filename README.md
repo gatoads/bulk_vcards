@@ -18,7 +18,7 @@ A Python script that generates vCard contact packages for easy importation. The 
 4. **Run the Script**: Execute the script and follow the prompts.
 
     ```bash
-    python script_name.py
+    python criar_contatos.py
     ```
 
 5. **Choose Contact List File**: Select the desired contact list file from the displayed options.
