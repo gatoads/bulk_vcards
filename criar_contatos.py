@@ -1,36 +1,27 @@
 import os
 import glob
 from datetime import datetime
-from colorama import Fore
 
-print(f'''{Fore.WHITE}                                                       .
+print('''                                                       .
                     |\__/,|   (`\\                      .
-                  _.|o o  |_   ) )                     {Fore.WHITE}.
-                -(((---(((--------                     {Fore.WHITE}.{Fore.YELLOW}
-  ▄████  ▄▄▄     ▄▄▄█████▓ ▒█████                      {Fore.WHITE}.{Fore.YELLOW}
- ██▒ ▀█▒▒████▄   ▓  ██▒ ▓▒▒██▒  ██▒                    {Fore.WHITE}.{Fore.YELLOW}
-▒██░▄▄▄░▒██  ▀█▄ ▒ ▓██░ ▒░▒██░  ██▒                    {Fore.WHITE}.    Autor: {Fore.CYAN}Gato{Fore.YELLOW}
-░▓█  ██▓░██▄▄▄▄██░ ▓██▓ ░ ▒██   ██░                    {Fore.WHITE}.    │{Fore.YELLOW}
-░▒▓███▀▒ ▓█   ▓██▒ ▒██▒ ░ ░ ████▓▒░                    {Fore.WHITE}.    └──> {Fore.WHITE}Instagram:{Fore.CYAN} @gato.ads{Fore.YELLOW}
- ░▒   ▒  ▒▒   ▓▒█░ ▒ ░░   ░ ▒░▒░▒░                     {Fore.WHITE}.{Fore.YELLOW}
-  ░   ░   ▒   ▒▒ ░   ░      ░ ▒ ▒░                     {Fore.WHITE}.{Fore.YELLOW}
-░ ░   ░   ░   ▒    ░      ░ ░ ░ ▒                      {Fore.WHITE}.{Fore.YELLOW}
-      ░       ░  ░            ░ ░                      {Fore.WHITE}.{Fore.YELLOW}
+                  _.|o o  |_   ) )                     .
+                -(((---(((--------                     .
+  ▄████  ▄▄▄     ▄▄▄█████▓ ▒█████                      .
+ ██▒ ▀█▒▒████▄   ▓  ██▒ ▓▒▒██▒  ██▒                    .
+▒██░▄▄▄░▒██  ▀█▄ ▒ ▓██░ ▒░▒██░  ██▒                    .    Autor: Gato
+░▓█  ██▓░██▄▄▄▄██░ ▓██▓ ░ ▒██   ██░                    .    │
+░▒▓███▀▒ ▓█   ▓██▒ ▒██▒ ░ ░ ████▓▒░                    .    └──> Instagram: @gato.ads
+ ░▒   ▒  ▒▒   ▓▒█░ ▒ ░░   ░ ▒░▒░▒░                     .
+  ░   ░   ▒   ▒▒ ░   ░      ░ ▒ ▒░                     .
+░ ░   ░   ░   ▒    ░      ░ ░ ░ ▒                      .
+      ░       ░  ░            ░ ░                      .
 
-Apenas se transforme.
-
-{Fore.GREEN}Ferramenta para criação de pacotes vCard de contatos, prontos para importação.{Fore.WHITE}
-
+Ferramenta para criação de pacotes vCard de contatos, prontos para importação.
 ''')
-
-
-
-# NT: em "criar_contato", eu coloquei o caractere ' no início de cada nome. Dessa forma, esses contatos serão os primeiros a aparecerem na lista de contatos de qualquer pessoa que importá-los. 
 
 def criar_contato(numero, indice, nome_contato):
     contato = f"BEGIN:VCARD\nVERSION:3.0\nN:\"'{nome_contato} {indice};;;\nFN:\"'{nome_contato} {indice}\nTEL;TYPE=VOICE,CELL;VALUE=text:{numero}\"\nEND:VCARD"
     return contato
-
 
 def exibir_opcoes_arquivos():
     arquivos_txt = glob.glob("*.txt")
@@ -56,7 +47,7 @@ def dividir_contatos_grupos(numeros, tamanho_grupo):
 
 def main():
     arquivos_txt = exibir_opcoes_arquivos()
-    
+
     escolha = int(input("\n\nNúmero do arquivo: "))
 
     if 1 <= escolha <= len(arquivos_txt):
@@ -77,7 +68,7 @@ def main():
                 for indice, numero in enumerate(grupo, start=1):
                     contato = criar_contato(numero, indice + (indice_grupo - 1) * tamanho_grupo, nome_contato)
                     file.write(contato + '\n')
-        
+
         print(f"Contatos criados com sucesso em {diretorio_contatos}")
     else:
         print("Escolha inválida. Por favor, digite um número válido.")
