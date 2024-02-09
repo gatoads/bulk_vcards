@@ -36,7 +36,6 @@ A Python script that generates vCard contact packages for easy importation. The 
 ## Requirements
 
 - Python 3.x
-- Colorama library (install using `pip install colorama`)
 
 ## Author
 
