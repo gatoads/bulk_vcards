@@ -3,11 +3,7 @@ A Python script that generates vCard contact packages for easy importation. The 
 
 ## Usage
 
-1. **Install**: requirements
-   
-   `pip install -r requirements.txt`
-
-3. **Prepare Contact List**: Import the contact list in the following format:
+1. **Prepare Contact List**: Import the contact list in the following format:
 
     ```
     +55 84 9999-1642
@@ -15,19 +11,19 @@ A Python script that generates vCard contact packages for easy importation. The 
     +55 85 8523-9617
     ```
 
-4. **Run the Script**: Execute the script and follow the prompts.
+2. **Run the Script**: Execute the script and follow the prompts.
 
     ```bash
     python criar_contatos.py
     ```
 
-5. **Choose Contact List File**: Select the desired contact list file from the displayed options.
+3. **Choose Contact List File**: Select the desired contact list file from the displayed options.
 
-6. **Set Group Size**: Enter the desired number of contacts per vCard package.
+4. **Set Group Size**: Enter the desired number of contacts per vCard package.
 
-7. **Set Default Contact Name**: Specify the default name for your leads.
+5. **Set Default Contact Name**: Specify the default name for your leads.
 
-8. **Review Output**: The script will create vCard files with contacts organized in groups based on the chosen size. The files will be stored in a timestamped directory.
+6. **Review Output**: The script will create vCard files with contacts organized in groups based on the chosen size. The files will be stored in a timestamped directory.
 
 ## Additional Notes
 
